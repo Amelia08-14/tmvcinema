@@ -1,0 +1,1224 @@
+body {
+    font-family: 'Space Grotesk', serif;
+    overflow-x: hidden;
+      margin: 0;
+      padding: 0;
+  background-color: black;
+}
+
+
+header {
+  background-color: #000; /* Black background */
+  color: #fff; /* White text */
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between; /* Distribute space between items */
+  align-items: center;
+}
+header a:hover{
+    color:#e23d31;
+}
+
+header a {
+  position: relative; /* Enable positioning for the underline */
+  display: inline-block; /* Keep the link and underline on the same line */
+  text-decoration: none; /* Remove default underline */
+  overflow: hidden; /* Hide excess content beyond the link's width */
+}
+
+header a::after {
+  content: ""; /* No text content for the pseudo-element */
+  position: absolute; /* Position the underline absolutely */
+  bottom: 0; /* Place at the bottom of the link */
+  left: 0; /* Start from the left edge */
+  width: 0; /* Initially, the underline has zero width */
+  height: 1px; /* Set the height of the underline */
+  background-color: #e23d31; /* Set the desired color */
+  transition: width 0.3s ease; /* Define the animation properties */
+}
+
+header a:hover::after {
+  width: 100%; /* Expand the underline to full width on hover */
+}
+
+
+.container {
+  display: flex;
+  width: 100%;
+  margin: 0;
+  padding: 20px;
+  align-items: center;
+}
+
+header img {
+  width: 100px;
+  height: auto;
+  margin-right: 20px;
+}
+
+header nav {
+  display: flex;
+  flex-grow: 1;/* Allow menu to expand */
+  align-items: center;
+  justify-content: center;
+}
+
+header nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center; /* Center menu items */
+}
+
+header nav li {
+  margin-right: 20px;
+}
+
+header nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+}
+/* Dropdown Menu Styles */
+nav ul li.dropdown {
+    position: relative;
+    top:100%;/* Enable positioning for dropdown */
+}
+
+nav ul li.dropdown ul.dropdown-content {
+    display: none; /* Hide the submenu by default */
+    position: absolute; /* Position the submenu absolutely */
+    background-color: #f9f9f9;
+    min-width: 160px; /* Set minimum width for the submenu */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 100; /* Ensure the submenu is on top */
+    color: black;
+}
+
+.dropdown-content a{
+    color:black;
+}
+
+nav ul li.dropdown:hover ul.dropdown-content {
+    display: block; /* Show the submenu on hover */
+}
+
+nav ul li.dropdown ul.dropdown-content li {
+    padding: 12px 16px;
+}
+
+nav ul li.dropdown ul.dropdown-content li:hover {
+    background-color: #f1f1f1;
+}
+/* Dropdown2 Menu Styles */
+nav ul li.dropdown2 {
+    position: relative;
+    top:0;
+    left:0;/* Enable positioning for dropdown */
+}
+
+nav ul li.dropdown2 ul.dropdown2-content {
+    display: none; /* Hide the submenu by default */
+    position: absolute; /* Position the submenu absolutely */
+    background-color: #f9f9f9;
+    min-width: 360px; /* Set minimum width for the submenu */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 2; 
+    color: black;
+}
+
+.dropdown2-content a{
+    color:black;
+}
+
+nav ul li.dropdown2:hover ul.dropdown2-content {
+    display: block; /* Show the submenu on hover */
+}
+
+nav ul li.dropdown2 ul.dropdown2-content li {
+    padding: 12px 16px;
+}
+
+nav ul li.dropdown2 ul.dropdown-content2 li:hover {
+    background-color: #f1f1f1;
+}
+
+
+
+
+.icons {
+  display: flex; /* Allow icons to be displayed in a row */
+  align-items: center; /* Align icons vertically */
+}
+
+.account-icon,
+.search-icon {
+  margin-left: 20px; /* Add spacing between icons */
+}
+
+.account-icon i,
+.search-icon i {
+  font-size: 20px; /* Adjust icon size as desired */
+  color: #fff; /* Set icon color */
+}
+
+.slider {
+  position: relative; /* Make the slider position relative */
+  height: 550px; /* Adjust the slider height as needed */
+  z-index: 1; /* Set a higher z-index to ensure it's above the header */
+}
+
+.slider-wrapper {
+  position: absolute; /* Position the wrapper absolutely */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden; /* Hide overflowing content */
+  background-position: center; /* Set background position */
+}
+
+.slide {
+  display:flex;
+  align-items:flex-end;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.5s ease; /* Add transition for smooth sliding */
+}
+
+.slide.active {
+  transform: translateX(0); /* Show the active slide */
+}
+
+.slide:not(.active) {
+  transform: translateX(100%); /* Hide inactive slides */
+}
+
+.slide-content {
+  display: flex;
+  flex-direction: row; /* Arrange items in a row */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50%;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  text-align: center;
+  border-radius:10px;
+}
+
+.slide-content .text-container { /* Wrap H2 and P */
+  flex: 1; /* Allow text container to grow */
+  display: flex; /* Enable flexbox for H2 and P */
+  flex-direction: column; /* Stack H2 and P vertically */
+  align-items: flex-start; /* Align H2 and P to the left */
+}
+
+.slide-content h1 {
+  margin-bottom: 5px; /* Add margin between H2 and P */
+  font-size:2em;
+}
+.slide-content p {
+  text-align:left;
+}
+
+
+.slide-content img {
+  max-width: 50%; /* Replace with desired width */
+  max-height: 10%; /* Replace with desired height */
+  margin-right: 20px; /* Adjust margin as needed */
+  position: relative; /* Enable relative positioning for the image */
+}
+
+.slide-content img::after {
+  content: ""; /* Empty content for pseudo-element */
+  position: absolute; /* Position absolutely within the image */
+  top: 50%; /* Vertical center */
+  left: 50%; /* Horizontal center */
+  transform: translate(-50%, -50%); /* Center relative to parent */
+  cursor: pointer; /* Indicate clickability (optional) */
+  /* Style the icon content here */
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background (optional) */
+  color: white; /* Icon color */
+  font-size: 30px; /* Icon size */
+  display: flex; /* Center icon content horizontally and vertically */
+  justify-content: center;
+  align-items: center;
+  width: 40px; /* Adjust width as needed */
+  height: 40px; /* Adjust height as needed */
+  border-radius: 50%; /* Round corners for the icon */
+  
+}
+
+/* New rule for play icon positioning */
+.slide-content .play-icon {
+  position: absolute; /* Position absolutely within the image */
+  top: 50%;
+  left: 25%; /* Adjust as needed for horizontal placement */
+  font-size:50px;
+  transform: translateY(-50%); /* Vertical center */
+  /* Other styles for the icon (optional) */
+  cursor:pointer;
+}
+
+.slider-controls {
+  display: block;
+  color:white;
+}
+
+.prev-arrow {
+  position: absolute; /* Absolute positioning */
+  top: 50%; /* Vertical center */
+  left: 20px; /* Left margin */
+  transform: translateY(-50%); /* Vertical center */
+  cursor: pointer;
+  z-index: 10; /* Ensure arrow is above slide content */
+  /* Use ::before for left arrow */
+
+  width: 60px;
+  height: 60px;
+  background-repeat: no-repeat;
+  /* Use font-awesome icons */
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 35px; /* Adjust icon size as desired */
+  text-decoration: none;
+  /* Replace with your desired icon */
+  content: "\f054"; /* Left arrow icon */
+}
+
+.next-arrow {
+  position: absolute; /* Absolute positioning */
+  top: 50%; /* Vertical center */
+  right: 20px; /* Right margin */
+  transform: translateY(-50%); /* Vertical center */
+  cursor: pointer;
+  z-index: 10; /* Ensure arrow is above slide content */
+  /* Use ::after for right arrow */
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background-repeat: no-repeat;
+  /* Use font-awesome icons */
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 35px; /* Adjust icon size as desired */
+  text-decoration: none;
+  /* Replace with your desired icon */
+  content: "\f055"; /* Right arrow icon */
+}
+
+/*section des Features Films En Vedette*/
+
+.featured-movies h2 {
+    text-align: center;
+    font-size: 3rem;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    color: #E23D31;
+}
+
+.movies-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Individual movie items */
+.movie-item {
+    width: 30%; /* Adjust width as needed */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.movie-item img {
+    width: 100%;
+    height:300px;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
+
+.movie-item:hover img {
+    transform: scale(1.1);
+}
+
+
+.movie-info-band {
+  width: 80%; /* Adjust width as needed */
+  z-index: 1;
+  position: relative; /* Overlaps the image */
+  bottom: 50px; /* Positions at the bottom of the movie-item */
+  left:25px;
+  background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
+  color: #fff; /* White text color */
+  padding: 15px 20px; /* Padding for content */
+  display: flex; /* Arranges elements horizontally */
+  flex-direction: column; /* Stacks elements vertically */
+  gap: 20px; /* Spacing between elements */
+  transition: background-color 0.3s ease-in-out; /* Smooth background color transition on hover */
+  
+}
+
+
+.movie-item:hover .movie-info-band {
+  background-color: rgba(0, 0, 0, 0.9); /* Darkens the background color on hover */
+}
+
+.movie-info-band h3 {
+  margin-bottom: 5px; /* Small margin below the title */
+  font-size: 1.1rem; /* Adjust font size as needed */
+}
+
+.movie-details {
+  display: flex; /* Arranges category and duration horizontally */
+  flex-direction:row;
+  font-size: 0.9em; /* Adjust font size as needed */
+}
+
+.movie-details .category {
+  background-color: #E23D31; /* Yellow background for category */
+  color: #000; /* Black text color */
+  padding: 5px 10px; /* Padding for category */
+  border-radius: 5px; /* Rounded corners for category */
+  margin-right: 10px; /* Margin between category and duration */
+}
+
+.movie-buttons {
+  display: flex; /* Arranges buttons horizontally */
+  justify-content: space-between; /* Buttons on opposite sides */
+  width: 100%; /* Stretches buttons to fill container width */
+}
+
+.movie-buttons button {
+  background-color: transparent; /* Transparent background for buttons */
+  color: #fff; /* White text color */
+  border: 1px solid #fff; /* White border for buttons */
+  padding: 10px 15px; /* Padding for buttons */
+  font-size: 0.9em; /* Adjust font size as needed */
+  cursor: pointer; /* Indicates clickable buttons */
+  transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out; /* Smooth button transition on hover */
+}
+
+.movie-buttons button:hover {
+  background-color: rgba(255, 255, 255, 0.3); /* White background on hover with transparency */
+  border-color: #E23D31; /* Yellow border on hover */
+}
+
+/* Optional: Add hover effect for button text color or icon */
+.movie-buttons button:hover {
+  color: #E23D31; /* Change text color to yellow on hover (optional) */
+}
+
+/* Optional: Use Font Awesome for hover icon (replace with your icon class) */
+.movie-buttons button:hover i {
+  color: #E23D31; /* Change icon color to yellow on hover (optional) */
+}
+
+/*section des Prochaines sorties*/
+
+.upcoming-movies h2 {
+    text-align: center;
+    font-size: 3rem;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    color: #E23D31;
+}
+
+.moviescom-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Individual movie items */
+.moviecom-item {
+    width: 30%; /* Adjust width as needed */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.moviecom-item img {
+    width: 100%;
+    height:600px;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
+
+.moviecom-item:hover img {
+    transform: scale(1.1);
+}
+
+
+.moviecom-info-band {
+  width: 80%; /* Adjust width as needed */
+  z-index: 1;
+  position: relative; /* Overlaps the image */
+  bottom: 50px; /* Positions at the bottom of the movie-item */
+  left:25px;
+  background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
+  color: #fff; /* White text color */
+  padding: 15px 20px; /* Padding for content */
+  display: flex; /* Arranges elements horizontally */
+  flex-direction: column; /* Stacks elements vertically */
+  gap: 20px; /* Spacing between elements */
+  transition: background-color 0.3s ease-in-out; /* Smooth background color transition on hover */
+  
+}
+
+
+.moviecom-item:hover .movie-info-band {
+  background-color: rgba(0, 0, 0, 0.9); /* Darkens the background color on hover */
+}
+
+.moviecom-info-band h3 {
+  margin-bottom: 5px; /* Small margin below the title */
+  font-size: 1.1rem; /* Adjust font size as needed */
+}
+
+.moviecom-details {
+  display: flex; /* Arranges category and duration horizontally */
+  align-items: center; /* Aligns content vertically */
+  font-size: 0.9em; /* Adjust font size as needed */
+}
+
+.moviecom-details .comcategory {
+  background-color: #E23D31; /* Yellow background for category */
+  color: #000; /* Black text color */
+  padding: 5px 10px; /* Padding for category */
+  border-radius: 5px; /* Rounded corners for category */
+  margin-right: 10px; /* Margin between category and duration */
+}
+
+.moviecom-buttons {
+  display: flex; /* Arranges buttons horizontally */
+  justify-content: space-between; /* Buttons on opposite sides */
+  width: 100%; /* Stretches buttons to fill container width */
+}
+
+.moviecom-buttons button {
+  background-color: transparent; /* Transparent background for buttons */
+  color: #fff; /* White text color */
+  border: 1px solid #fff; /* White border for buttons */
+  padding: 10px 15px; /* Padding for buttons */
+  font-size: 0.9em; /* Adjust font size as needed */
+  cursor: pointer; /* Indicates clickable buttons */
+  transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out; /* Smooth button transition on hover */
+}
+
+.moviecom-buttons button:hover {
+  background-color: rgba(255, 255, 255, 0.3); /* White background on hover with transparency */
+  border-color: #E23D31; /* Yellow border on hover */
+}
+
+/* Optional: Add hover effect for button text color or icon */
+.moviecom-buttons button:hover {
+  color: #E23D31; /* Change text color to yellow on hover (optional) */
+}
+
+/* Optional: Use Font Awesome for hover icon (replace with your icon class) */
+.moviecom-buttons button:hover i {
+  color: #E23D31; /* Change icon color to yellow on hover (optional) */
+}
+
+/*Footer Style */
+
+footer {
+  background-color: #000;
+  color: #fff;
+  padding: 40px;
+  border-top: 1px solid white;
+
+  
+}
+
+footer a{
+    text-decoration:none;
+    color:white;
+}
+
+footer a:hover{
+    color:#e23d31;
+}
+
+footer a {
+  position: relative; /* Enable positioning for the underline */
+  display: inline-block; /* Keep the link and underline on the same line */
+  text-decoration: none; /* Remove default underline */
+  overflow: hidden; /* Hide excess content beyond the link's width */
+}
+
+footer a::after {
+  content: ""; /* No text content for the pseudo-element */
+  position: absolute; /* Position the underline absolutely */
+  bottom: 0; /* Place at the bottom of the link */
+  left: 0; /* Start from the left edge */
+  width: 0; /* Initially, the underline has zero width */
+  height: 1px; /* Set the height of the underline */
+  background-color: #e23d31; /* Set the desired color */
+  transition: width 0.3s ease; /* Define the animation properties */
+}
+
+footer a:hover::after {
+  width: 100%; /* Expand the underline to full width on hover */
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%; /* Adjust width as needed */
+  margin: 0 auto;
+}
+
+.footer-row {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0 auto;
+  gap: 20px;
+}
+
+.footer-contact-info, .footer-useful-links, .footer-movie-categories, .footer-newsletter {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 1;
+  padding:30px;
+  margin-bottom:0;
+}
+
+
+.titlefooter {
+  font-size: 20px; /* Adjust font size as needed */
+  font-weight: bold;
+  margin-bottom: 25px;
+  position: relative; /* Enable positioning for the pseudo-element */
+  color:#e23d31;
+}
+
+.titlefooter::after {
+    content: "";
+    position: absolute;
+    left: 100%;
+    top: 100%;
+    width: 11px;
+    height: 11px;
+    border-right: 1px solid red;
+    border-bottom: 1px solid red;
+}
+
+
+
+.footer-contact-info ul, .footer-useful-links ul, .footer-movie-categories ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-contact-info li, .footer-useful-links li, .footer-movie-categories li {
+  margin-bottom: 5px;
+}
+
+.footer-newsletter form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.footer-newsletter input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+  border-radius:5px;
+}
+
+.footer-newsletter button {
+  background-color: #e23d31;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius:5px;
+}
+.footer-newsletter button:hover {
+    background-color:white;
+    color:#e23d31;
+}
+
+.footer-copyright {
+  margin-top: 10px;
+  font-size: 20px;
+}
+
+/*Pages Films*/
+
+/*Pages Films*/
+
+.filmbody{
+  background-color:white;
+  font-family:'Space Grotesk';
+}
+
+.calendar-container {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: 10px auto;
+}
+
+.calendar-tabs {
+  display: flex;
+  list-style: none;
+  margin-bottom: 20px;
+  justify-content: center;
+}
+
+.calendar-tab {
+  padding: 10px 15px;
+  border: 1px solid #e23d31;
+  margin-right: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  color:black;
+}
+
+.calendar-tab.active {
+  background-color: #f0f0f0;
+  color:#e23d31;
+}
+
+.movie-listings {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.movie-day {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.movie-listing {
+  display: flex;
+  align-items: middle;
+  width: 100%;
+  border: 1px solid #ddd;
+  padding: 15px;
+  background-color: white;
+  border-radius:5px;
+}
+
+
+.movie-listing h2{
+ color:red;
+ width:20%;
+ font-size:30px;
+}
+
+.movie-poster {
+  max-width: 20%; /* Adjust the percentage as needed */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: cover;
+  margin-right: 15px;
+  border-radius:10px;
+}
+
+.movie-poster {
+  flex: 1; /* Allocate equal width initially */
+  height: 200px; /* Adjust height as needed */
+  object-fit: cover; /* Maintain aspect ratio */
+  margin-bottom: 10px;
+}
+
+
+
+.movie-details {
+  flex: 1; /* Allocate equal width initially */
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+
+
+
+.movie-showtimes {
+  display: flex; /* Utiliser la disposition flex */
+  flex-wrap: wrap; /* Permettre le passage à la ligne automatique */
+  gap: 5px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background-color: #e23d31;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 55px;
+}
+
+/* Définir la largeur des éléments enfants */
+.movie-showtimes > * {
+  flex: 1 0 30%; /* Chaque élément occupe 25% de l'espace disponible */
+}
+
+
+
+
+
+.movie-showtime {
+  background-color: #e23d31; /* Red background for showtimes */
+  color: white; /* White text for showtimes */
+  padding: 5px 5px;
+  border-radius: 5px; /* Rounded corners for showtimes */
+}
+
+.book-ticket-container {
+  display: flex; /* Enable flexbox for alignment */
+  justify-content: flex-end; /* Align items to the right side */
+  margin-top: 5px; /* Add some margin for spacing */
+}
+
+.book-ticket-button {
+font-size:20px;
+  background-color: #FFF; /* Green background for book button */
+  color: #e23d31; /* White text for book button */
+  padding: 5px 10px;
+  border-radius: 5px; /* Rounded corners for book button */
+  border: none; /* Remove default button border */
+  cursor: pointer; /* Indicate clickable area */
+}
+
+.book-ticket-button:hover {
+font-size:20px;
+  background-color: #e23d31; /* Green background for book button */
+  color: #fff; /* White text for book button */
+  padding: 5px 10px;
+  border-radius: 5px; /* Rounded corners for book button */
+  border: none; /* Remove default button border */
+  cursor: pointer; /* Indicate clickable area */
+}
+
+/*Page Cartes */
+
+/* Card Banner */
+
+.card-banner img {
+    width: 100%;
+    max-width: 1423px;
+  
+}
+
+/* Card Columns */
+.card-columns {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+    flex-direction: row;
+}
+
+.card {
+    width: 20%; /* Adjust as needed */
+    margin-bottom: 20px;
+    margin: 10px 5px; /* Top and bottom margin */
+    text-align: center;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 10px;
+    background-color:#fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    line-height:2em;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.card h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color:#e23d31;
+    font-size:30px;
+}
+
+.card .price {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.card .subscription-type {
+    margin-bottom: 10px;
+}
+
+.subscribe-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #e23d31; /* Red color */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .card-columns {
+        flex-direction: column; /* Cards stack vertically */
+        align-items: center; /* Center cards horizontally */
+    }
+
+    .card {
+        width: 100%; /* Cards take full width */
+        margin-bottom: 30px; /* Increase margin between cards */
+    }
+}
+
+/*Pages de Salles */
+/* General Styles */
+
+/* Salle Banner */
+
+
+.salle-banner img {
+    width: 1920px;
+    max-height: 300px;
+    object-fit: cover;
+}
+
+
+/* Salle Details */
+.salle-details {
+    display: flex; /* Use flexbox for layout */
+    width:80%;
+    flex-direction: row;/* Set flex direction to row */
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+    margin-left:30px;
+    
+}
+
+.salle-image {
+    width: 50%; /* Adjust width as needed */
+   
+}
+
+.salle-image img {
+    width: 80%;
+    max-height: auto;
+    object-fit: cover;
+}
+
+.salle-features {
+    width: 60%; /* Adjust width as needed */
+    padding: 20px;
+    list-style: none;
+    padding: 0;
+    color:white;
+}
+
+.salle-features li {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.download-button {
+    display: block;
+    background-color: #e23d31;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    margin-top: 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    width:40%;
+}
+
+/*Page Blog*/
+/* Blog Posts */
+.blog-posts {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    justify-content:center;
+    padding:20px;
+}
+
+.blog-banner img {
+    width: 100%;
+    max-height: 300px; /* Reduce banner height to 200px */
+    object-fit: cover;
+}
+
+.article {
+    display:flex;
+    flex-direction:column;
+    width: 30%;
+    padding: 20px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    margin: 20px;
+    line-height:1.5em;
+    border-radius:5px;
+}
+
+.article img {
+    width: 100%;
+    max-height: 200px;  /* Adjust as needed */
+    object-fit: cover;
+    margin-bottom: 10px;
+    border-radius:10px;
+}
+
+.article h2 {
+    margin-top: 5px;
+    margin-bottom: 10px;
+    color:#e23d31;
+}
+
+.article p {
+    color:white;
+    line-height: 1.6;
+}
+
+.category {
+    display: inline-block;
+    background-color: #eee;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    margin-top: 10px;
+    margin-bottom:10px;
+    width:15%;
+}
+
+.read-more-btn {
+    background-color: #e23d31; /* Blue background color */
+    color: #fff; /* White text color */
+    padding: 10px 20px; /* Button padding */
+    border: none; /* Remove default border */
+    cursor: pointer; /* Indicate clickable behavior */
+    transition: background-color 0.3s; /* Smooth transition on hover */
+    margin-top:10px;
+    width:30%;
+    border-radius:10px;
+}
+
+.read-more-btn:hover { /* Hover state styles */
+    background-color: #fff;
+    color:#e23d31;
+    
+}
+
+/*Formulaire Achat*/
+h1 {
+  text-align: center;
+}
+
+form {
+  width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="date"],
+select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+input[type="number"] {
+  width: 80px;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+/*Page Contact*/
+/* General Styles */
+
+
+/* Hero Section */
+.hero {
+    background-image: url('images/banner-contact-us.jpg'); /* Background image */
+    background-size: cover;
+    background-position: center;
+    height: 300px; /* Adjust height as needed */
+    text-align: center;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero img {
+    display: none; /* Hide the banner image if using background image */
+}
+
+.hero-text {
+    padding: 20px;
+}
+
+.title-page-about{
+    color:#e23d31;
+    Font-size:40px;
+    text-align:center;
+}
+
+/* About Us Section */
+.about-us {
+    display: flex;
+    flex-direction:row;
+    margin-bottom: 10px;
+    padding:20px;
+    
+}
+
+.about-us-image {
+    width: 50%;
+    padding: 20px;
+}
+
+.about-us-image img {
+    width: 90%;
+    height: auto;
+}
+
+.about-us-text {
+    width:50%;
+    padding: 20px;
+    color:white;
+    font-size:20px;
+    line-height:2em;
+}
+.about-us-text H2 {
+    padding: 20px;
+    color:#e23d31;
+}
+/* Contact Form Section */
+.contact-form {
+    padding:40px;
+    margin-bottom: 40px;
+    width:80%;
+    display:flex;
+    flex:wrap;
+}
+
+.contact-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color:#e23d31;
+    font-size:40px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    padding:20px;
+    width:80%;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color:white;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form-group textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+.contact-form button {
+    background-color: #e23d31;
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-family:'Space Grotesk';
+}
+
+.contact-form button:hover {
+    background-color: white;
+    color:#e23d31;
+}
+
+/* Map Section */
+.map {
+    text-align: center;
+    margin-bottom: 40px;
+    
+}
+.map iframe{
+    border-radius:10px;
+}
+.map h2{
+    color:#e23d31;
+    font-size:40px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .about-us, .contact-form {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .about-us-image, .about-us-text {
+        padding: 10px;
+    }
+}
+

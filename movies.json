@@ -1,0 +1,49 @@
+{
+  "days": [
+    {
+      "day": "Aujourd'hui",
+      "movies": [
+        {
+          "title": "Madame Web",
+          "poster": "images/mmwe.jpg",
+          "showtimes": ["10:00", "14:30", "20:00"]
+        },
+        {
+          "title": "Al Machi",
+          "poster": "images/almachi.jpeg",
+          "showtimes": ["12:00", "16:00", "21:00"]
+        }
+      ]
+    },
+    {
+      "day": "Demain",
+      "movies": [
+        {
+          "title": "Dune 2",
+          "poster": "images/dune2.jpg",
+          "showtimes": ["11:00", "15:00", "19:00"]
+        },
+        {
+          "title": "ARGYLLE",
+          "poster": "images/argyle.webp",
+          "showtimes": ["13:30", "17:30", "21:30"]
+        }
+      ]
+    },
+     {
+      "day": "23-Avril",
+      "movies": [
+        {
+          "title": "Imaginaire",
+          "poster": "images/imaginaire.jpeg",
+          "showtimes": ["11:00", "15:00", "19:00"]
+        },
+        {
+          "title": "Godzilla vs Kong",
+          "poster": "images/Godvskong.webp",
+          "showtimes": ["13:30", "17:30", "21:30"]
+        }
+      ]
+    }
+  ]
+}
